@@ -35,7 +35,11 @@ int _printf(const char *format, ...)
     {
       ptr++;
 
-      if (*ptr == 'c')
+      if (*ptr == '\0')
+      {
+        break;
+      }
+      else if (*ptr == 'c')
       {
         count += manager_char(args);
       }
