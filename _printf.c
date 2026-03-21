@@ -37,7 +37,9 @@ int _printf(const char *format, ...)
 
       if (*ptr == '\0')
       {
-        break;
+        /*print previous character in string*/
+        _putchar('%');
+
       }
       else if (*ptr == 'c')
       {
@@ -84,7 +86,7 @@ int _printf(const char *format, ...)
         /* unknown format specifier - print % and the char */
         _putchar('%');
         _putchar(*ptr);
-        count += 2;
+        count ++;
       }
 
       ptr++;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 
-int __main(void)
+int main(void)
 {
     int result;
     
@@ -26,7 +26,7 @@ int __main(void)
 
     printf("\n---\n"); 
     result = _printf("%");
-    printf("\nLength: %d\n", result);
+    _printf("%");
     
     return (0);
 }
