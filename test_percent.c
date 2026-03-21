@@ -20,8 +20,12 @@ int __main(void)
     printf("\nLength: %d\n", result);
 
       printf("\n---\n");
-    printf("Test 2: _printf(\"%%K\");\n");
+    printf("Test 4: _printf(\"%%K\");\n");
     result = _printf("%K");
+    printf("\nLength: %d\n", result);
+
+    printf("\n---\n"); 
+    result = _printf("%");
     printf("\nLength: %d\n", result);
     
     return (0);
