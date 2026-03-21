@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	ptr = format;
 	
 
-  
+
   if (format == NULL)
 		return va_end(args), -1;
 	while (*ptr)
@@ -39,8 +39,7 @@ int _printf(const char *format, ...)
       if (*ptr == '\0')
       {
         /*si no hay mas codigo o string para leer para de correr*/
-        va_end(args);
-        break; 
+        return va_end(args), count;
       }
       else if (*ptr == 'c')
       {
