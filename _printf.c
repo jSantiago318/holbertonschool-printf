@@ -42,10 +42,6 @@ int _printf(const char *format, ...)
           _putchar('%');
           count++;
       }
-      else if (*ptr == 'r')
-      {
-        return (-1); 
-      }
       else if (*ptr == 'c')
       {
         count += manager_char(args);
@@ -61,6 +57,18 @@ int _printf(const char *format, ...)
       else if (*ptr == 'i')
       {
         count += manager_int(args);
+      }
+      else if (*ptr == 'x')
+      {
+        count += manager_hex(args, 0);
+      }
+      else if (*ptr == 'X')
+      {
+        count += manager_hex(args, 1);
+      }
+      else if (*ptr == 'p')
+      {
+        count += manager_pointer(args);
       }
       else if (*ptr == '%')
       {

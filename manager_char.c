@@ -94,3 +94,83 @@ int manager_int(va_list args)
 	return (count);
 }
 
+/**
+ * print_hex - prints an unsigned number in hexadecimal
+ * @num: the unsigned number to print
+ * @uppercase: 1 for uppercase (A-F), 0 for lowercase (a-f)
+ *
+ * Return: number of characters printed
+ */
+int print_hex(unsigned int num, int uppercase)
+{
+	int count = 0;
+	char *hex_lower = "0123456789abcdef";
+	char *hex_upper = "0123456789ABCDEF";
+	char *hex = uppercase ? hex_upper : hex_lower;
+
+	if (num >= 16)
+		count += print_hex(num / 16, uppercase);
+	_putchar(hex[num % 16]);
+	count++;
+	return (count);
+}
+
+/**
+ * manager_hex - prints an unsigned integer in hexadecimal
+ * @args: va_list containing the unsigned integer
+ * @uppercase: 1 for uppercase, 0 for lowercase
+ *
+ * Return: number of characters printed
+ */
+int manager_hex(va_list args, int uppercase)
+{
+	unsigned int num = va_arg(args, unsigned int);
+
+	return (print_hex(num, uppercase));
+}
+
+/**
+ * manager_pointer - prints a pointer address in hexadecimal
+ * @args: va_list containing the pointer
+ *
+ * Return: number of characters printed
+ */
+int manager_pointer(va_list args)
+{
+	unsigned long ptr = (unsigned long)va_arg(args, void *);
+	int count = 0;
+
+	_putchar('0');
+	_putchar('x');
+	count += 2;
+
+	if (ptr == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		count += print_hex_pointer(ptr);
+	}
+	return (count);
+}
+
+/**
+ * print_hex_pointer - prints pointer in hex (helper for pointers)
+ * @num: the address to print in hex
+ *
+ * Return: number of characters printed
+ */
+int print_hex_pointer(unsigned long num)
+{
+	int count = 0;
+	char *hex = "0123456789abcdef";
+
+	if (num >= 16)
+		count += print_hex_pointer(num / 16);
+	_putchar(hex[num % 16]);
+	count++;
+	return (count);
+}
+

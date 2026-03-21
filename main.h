@@ -10,7 +10,10 @@ int manager_char(va_list args);
 int manager_string(va_list args);
 int manager_percent(va_list args);
 int manager_int(va_list args);
+int manager_hex(va_list args, int uppercase);
+int manager_pointer(va_list args);
 int print_number(unsigned int num);
-
+int print_hex(unsigned int num, int uppercase);
+int print_hex_pointer(unsigned long num);
 
 #endif
