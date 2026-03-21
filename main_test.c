@@ -7,7 +7,7 @@
  *
  * Return: Always 0
  */
-int main(void)
+int _main(void)
 {
     int len;
     int len2;
