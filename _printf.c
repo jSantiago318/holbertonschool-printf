@@ -93,6 +93,7 @@ int _printf(const char *format, ...)
         _putchar('%');
         _putchar(*ptr);
         count += 2;
+         va_end(args);
       }
 
       ptr++;
