@@ -31,13 +31,13 @@ int print_hex(unsigned int num, int uppercase)
 	return (count);
 }
 
-    /**
-    * manager_hex - prints an unsigned integer in hexadecimal
-    * @args: va_list containing the unsigned integer
-    * @uppercase: 1 for uppercase, 0 for lowercase
-    *
-    * Return: number of characters printed
-    */
+/**
+* manager_hex - prints an unsigned integer in hexadecimal
+* @args: va_list containing the unsigned integer
+* @uppercase: 1 for uppercase, 0 for lowercase
+*
+* Return: number of characters printed
+*/
 int manager_hex(va_list args, int uppercase)
 {
 	/* Sacamos el numero sin signo del va_list */
@@ -47,12 +47,12 @@ int manager_hex(va_list args, int uppercase)
 	return (print_hex(num, uppercase));
 }
 
-    /**
-    * print_hex_pointer - prints pointer in hex (helper for pointers)
-    * @num: the address to print in hex
-    *
-    * Return: number of characters printed
-    */
+/**
+* print_hex_pointer - prints pointer in hex (helper for pointers)
+* @num: the address to print in hex
+*
+* Return: number of characters printed
+*/
 int print_hex_pointer(unsigned long num)
 {
 	int count = 0;
@@ -74,12 +74,12 @@ int print_hex_pointer(unsigned long num)
 }
 
 
-    /**
-    * print_octal - prints an unsigned number in octal recursively
-    * @num: the unsigned number to print
-    *
-    * Return: number of characters printed
-    */
+/**
+* print_octal - prints an unsigned number in octal recursively
+* @num: the unsigned number to print
+*
+* Return: number of characters printed
+*/
 int print_octal(unsigned int num)
 {
 	int count = 0;
@@ -95,12 +95,12 @@ int print_octal(unsigned int num)
 	return (count);
 }
 
-    /**
-    * manager_octal - prints an unsigned integer in octal
-    * @args: va_list containing the unsigned integer
-    *
-    * Return: number of characters printed
-    */
+/**
+* manager_octal - prints an unsigned integer in octal
+* @args: va_list containing the unsigned integer
+*
+* Return: number of characters printed
+*/
 int manager_octal(va_list args)
 {
 	/*
