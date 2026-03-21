@@ -34,6 +34,18 @@ int _printf(const char *format, ...)
       if (*ptr == '%') {
       ptr++;
 
+      /* 
+      * verify length of scring, if it is only % and 1 char long, return character
+      */
+
+      if (*ptr == '\0')
+      {
+        _putchar('%');
+        count++;
+      }
+
+
+
       if (*ptr == 'r')
       {
         return (-1);
