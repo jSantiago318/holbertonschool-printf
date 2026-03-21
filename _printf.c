@@ -79,7 +79,6 @@ int _printf(const char *format, ...)
       {
         /* unknown format specifier - print % and the char */
         _putchar(*ptr);
-        // _putchar(*ptr);
         count ++;
       }
 
