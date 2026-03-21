@@ -13,13 +13,14 @@ int _printf(const char *format, ...)
 	int count;
    
 	const char *ptr;
-
-	if (format == NULL)
-		return va_end(args), -1;
-
-	va_start (args, format);
+  va_start (args, format);
 	count = 0;
 	ptr = format;
+	
+
+  
+  if (format == NULL)
+		return va_end(args), -1;
 	while (*ptr)
 	{
      /* 
