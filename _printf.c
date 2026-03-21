@@ -1,4 +1,3 @@
- 
 #include "main.h"
 #include <string.h>
 
@@ -30,20 +29,13 @@ int _printf(const char *format, ...)
     {
       _putchar(*ptr);
       count++;
-    }
-      if (*ptr == '%') {
+    }else if (*ptr == '%') {
       ptr++;
 
       /* 
       * verify length of scring, if it is only % and 1 char long, return character
       */
-
-      if (*ptr == '\0')
-      {
-        _putchar('%');
-        count++;
-      }
-
+ 
 
 
       if (*ptr == 'r')
@@ -82,16 +74,16 @@ int _printf(const char *format, ...)
           /* VERIFICAR %c*/
         if (*ptr == 'c')
           count += manager_char(args);
-                  /* VERIFICAR %s para string >> nested loop*/
+        /* VERIFICAR %s para string >> nested loop*/
         if (*ptr == 's')
           count += manager_string(args);
-                  /* VERIFICAR %d para decimal*/
+        /* VERIFICAR %d para decimal*/
         if (*ptr == 'd')
           count += manager_int(args);
-                  /* VERIFICAR %i para integer*/
+        /* VERIFICAR %i para integer*/
         if (*ptr == 'i')
           count += manager_int(args);
-                  /* VERIFICAR %% para percent sign*/
+        /* VERIFICAR %% para percent sign*/
         
         if (*ptr == '%')
         {
