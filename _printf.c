@@ -1,4 +1,5 @@
 #include "main.h"
+#include <cstdarg>
 #include <string.h>
 
 /**
@@ -38,7 +39,6 @@ int _printf(const char *format, ...)
       if (*ptr == '\0')
       {
         /*si no hay mas codigo o string para leer para de correr*/
-        va_end(args);
         break;
       }
       else if (*ptr == 'c')
@@ -93,12 +93,11 @@ int _printf(const char *format, ...)
         _putchar('%');
         _putchar(*ptr);
         count += 2;
-         va_end(args);
       }
 
       ptr++;
     }
 	}
-	va_end (args);
-	return (count);
+	/* va_end (args); */
+	return va_end(args), count;
 }
