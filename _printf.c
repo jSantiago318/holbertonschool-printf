@@ -35,7 +35,11 @@ int _printf(const char *format, ...)
     {
       ptr++;
 
-      if (*ptr == 'c')
+      if (*ptr == '\0')
+      {
+        break;
+      }
+      else if (*ptr == 'c')
       {
         count += manager_char(args);
       }
@@ -78,8 +82,15 @@ int _printf(const char *format, ...)
       else
       {
         /* unknown format specifier - print % and the char */
+        /* 
+        * Asi se debe de imprimir 
+        *Correct output - case: _printf("%");
+        *Correct output - case: _printf("%!\n");
+        *Correct output - case: _printf("%K\n");
+        */
+        _putchar('%');
         _putchar(*ptr);
-        count ++;
+        count += 2;
       }
 
       ptr++;
