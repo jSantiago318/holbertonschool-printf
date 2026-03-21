@@ -1,4 +1,3 @@
- 
 #include "main.h"
 #include <string.h>
 
@@ -39,8 +38,7 @@ int _printf(const char *format, ...)
       /* if there is no more characters */
       if (*ptr == '\0')
       {
-          _putchar('%');
-          count++;
+        break;
       }
       else if (*ptr == 'c')
       {
