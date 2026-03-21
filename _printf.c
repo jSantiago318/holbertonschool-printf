@@ -35,13 +35,7 @@ int _printf(const char *format, ...)
     {
       ptr++;
 
-      if (*ptr == '\0')
-      {
-        /*print previous character in string*/
-        _putchar('%');
-
-      }
-      else if (*ptr == 'c')
+      if (*ptr == 'c')
       {
         count += manager_char(args);
       }
@@ -84,8 +78,8 @@ int _printf(const char *format, ...)
       else
       {
         /* unknown format specifier - print % and the char */
-        _putchar('%');
         _putchar(*ptr);
+        // _putchar(*ptr);
         count ++;
       }
 
