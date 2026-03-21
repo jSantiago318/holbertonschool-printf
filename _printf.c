@@ -12,8 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int count;
-  // string return_string
-  
+   
 	const char *ptr;
 
 	if (format == NULL)
