@@ -45,10 +45,10 @@ int manager_string(va_list args)
  */
 int manager_percent(va_list args)
 {
-	(void)args;
-	_putchar('%');
-	return (1);
-}
+    (void)args;
+    _putchar('%');
+    return (1);
+} 
 
 /**
  * print_number - prints an unsigned number recursively

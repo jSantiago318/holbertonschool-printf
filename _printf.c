@@ -31,42 +31,52 @@ int _printf(const char *format, ...)
     {
       _putchar(*ptr);
       count++;
-    } else if (*ptr == '%') {
+      ptr++;
+    }
+    else if (*ptr == '%')
+    {
       ptr++;
 
       /* if there is no more characters */
-      if (*ptr == '\0' && count == 0)
+      if (*ptr == '\0')
       {
-          count += manager_percent(args);
+          _putchar('%');
+          count++;
       }
-
-      if (*ptr == 'r')
+      else if (*ptr == 'r')
       {
         return (-1); 
       }
-      
+      else if (*ptr == 'c')
+      {
+        count += manager_char(args);
+      }
+      else if (*ptr == 's')
+      {
+        count += manager_string(args);
+      }
+      else if (*ptr == 'd')
+      {
+        count += manager_int(args);
+      }
+      else if (*ptr == 'i')
+      {
+        count += manager_int(args);
+      }
+      else if (*ptr == '%')
+      {
+        count += manager_percent(args);
+      }
+      else
+      {
+        /* unknown format specifier - print % and the char */
+        _putchar('%');
+        _putchar(*ptr);
+        count += 2;
+      }
 
-
-          /* VERIFICAR %c*/
-        if (*ptr == 'c')
-          count += manager_char(args);
-                  /* VERIFICAR %s para string >> nested loop*/
-        if (*ptr == 's')
-          count += manager_string(args);
-                  /* VERIFICAR %d para decimal*/
-        if (*ptr == 'd')
-          count += manager_int(args);
-                  /* VERIFICAR %i para integer*/
-        if (*ptr == 'i')
-          count += manager_int(args);
-                  /* VERIFICAR %% para percent sign*/
-        if (*ptr == '%')
-          count += manager_percent(args);
-
+      ptr++;
     }
-		ptr++;
-   
-  
 	}
 	va_end (args);
 	return (count);
