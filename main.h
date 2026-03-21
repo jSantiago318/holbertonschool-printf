@@ -15,5 +15,6 @@ int manager_pointer(va_list args);
 int print_number(unsigned int num);
 int print_hex(unsigned int num, int uppercase);
 int print_hex_pointer(unsigned long num);
-
+int manager_octal(va_list args);
+int manager_unsigned(va_list args);
 #endif

@@ -174,3 +174,38 @@ int print_hex_pointer(unsigned long num)
 	return (count);
 }
 
+/**
+ * manager_octal - prints an unsigned integer in octal
+ * @args: va_list containing the unsigned integer
+ *
+ * Return: number of characters printed
+ */
+int manager_octal(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	int count = 0;
+
+	if (num >= 8)
+		count += manager_octal(args);
+	_putchar((num % 8) + '0');
+	count++;
+	return (count);
+}
+
+/**
+ * manager_percent - prints a literal percent sign
+ * @args: unused
+ *
+ * Return: 1
+ **/
+int manager_unsigned(va_list args)
+{
+	unsigned int num = va_arg(args, unsigned int);
+		int count = 0;
+
+	if (num >= 10)
+		count += print_number(num / 10);
+	_putchar((num % 10) + '0');
+	count++;
+	return (count);
+}

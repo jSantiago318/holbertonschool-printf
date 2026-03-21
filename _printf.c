@@ -35,12 +35,7 @@ int _printf(const char *format, ...)
     {
       ptr++;
 
-      /* if there is no more characters */
-      if (*ptr == '\0')
-      {
-        break;
-      }
-      else if (*ptr == 'c')
+      if (*ptr == 'c')
       {
         count += manager_char(args);
       }
@@ -71,6 +66,14 @@ int _printf(const char *format, ...)
       else if (*ptr == '%')
       {
         count += manager_percent(args);
+      }
+      else if (*ptr == 'o')
+      {
+        count += manager_octal(args);
+      }
+      else if (*ptr == 'u')
+      {
+        count += manager_unsigned(args);
       }
       else
       {
