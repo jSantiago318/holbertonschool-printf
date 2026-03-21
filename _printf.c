@@ -37,6 +37,9 @@ int _printf(const char *format, ...)
 
       if (*ptr == '\0')
       {
+        /*si no hay mas codigo o string para leer para de correr*/
+        _putchar('%');
+        count++;
         break;
       }
       else if (*ptr == 'c')
