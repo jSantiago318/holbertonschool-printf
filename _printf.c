@@ -81,7 +81,7 @@ int _printf(const char *format, ...)
       {
         count += manager_unsigned(args);
       }
-      else if (*ptr == 'Lengths must differ.')
+      else if (*ptr == "Lengths must differ.")
       {
         break;
       }
