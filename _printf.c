@@ -36,11 +36,12 @@ int _printf(const char *format, ...)
     {
       ptr++;
 
+      /* Handle end of string - just return with count */
       if (*ptr == '\0')
       {
-        /*si no hay mas codigo o string para leer para de correr*/
-        return va_end(args), count;
+        break;
       }
+      /* Handle known format specifiers */
       else if (*ptr == 'c')
       {
         count += manager_char(args);
@@ -84,12 +85,6 @@ int _printf(const char *format, ...)
       else
       {
         /* unknown format specifier - print % and the char */
-        /* 
-        * Asi se debe de imprimir 
-        *Correct output - case: _printf("%");
-        *Correct output - case: _printf("%!\n");
-        *Correct output - case: _printf("%K\n");
-        */
         _putchar('%');
         _putchar(*ptr);
         count += 2;
