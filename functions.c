@@ -20,7 +20,7 @@ int print_number(unsigned int num)
 		count += print_number(num / 10);
 
 	/*
-    * num % 10 da el ultimo digito. Sumarle '0' (ASCII 48) lo
+    * num % 10 da el ultimo digito. Sumarle '0' lo
     * convierte al caracter correcto: 7 + '0' = '7'
     */
 	_putchar((num % 10) + '0');
