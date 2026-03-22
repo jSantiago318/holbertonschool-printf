@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 
 
   if (format == NULL)
-		return va_end(args), -1;
+		return va_end(args), -1; 
+  /* added va_end on return trying to porce the printf(%) to work */
 	while (*ptr)
 	{
      /* 
@@ -94,5 +95,5 @@ int _printf(const char *format, ...)
     }
 	}
 	/* va_end (args); */
-	return va_end(args), count;
+	return va_end(args), count--;
 }
