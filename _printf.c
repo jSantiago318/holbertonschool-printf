@@ -40,6 +40,7 @@ int _printf(const char *format, ...)
       /* Handle end of string - just return with count */
       if (*ptr == '\0')
       {
+        count--; /* don't count the '%' if it's at the end */
         break;
       }
       /* Handle known format specifiers */
